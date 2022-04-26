@@ -47,4 +47,4 @@ Post.init(
   }
 );
 
-module.exports = Project;
+module.exports = Post;
