@@ -33,9 +33,9 @@ Post.init(
     },
     comments: {
       type: DataTypes.STRING,
-      references: {
-        // add reference for comments model
-      },
+      // references: {
+      //   // add reference for comments model
+      // },
     },
   },
   {
