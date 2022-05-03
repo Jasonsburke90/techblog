@@ -8,7 +8,21 @@
     <p>{{reply.reply_contents}}</p>
     <p>Reply submitted by {{reply.user.name}} on {{format_date date_created}}</p>
   {{/each}}
+  {{#if loggedIn}}
   <p>
-    <button class='btn btn-primary'>Comment on this Post!</button>
+    <button class='btn btn-primary' id='reply-btn'>Reply to this Post!</button>
   </p>
+  <div class='col-md-6' id='reply-container' style='display: none;'>
+    <form class='form new-reply-form'>
+      <div class='form-group'>
+        <label for='reply-contents'>reply:</label>
+        <textarea class='form-input' id='reply-contents' name='reply-contents'></textarea>
+      </div>
+      <div class='form-group'>
+        <button type='submit' class='btn btn-primary'>Submit Reply</button>
+      </div>
+    </form>
+  </div>
 </div>
+{{/if}}
+<script src='/js/post.js'></script>
