@@ -50,6 +50,28 @@ router.get('/post/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/mypost/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        { model: Reply, include: [User] },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('mypost', {
+      ...post,
+      loggedIn: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {

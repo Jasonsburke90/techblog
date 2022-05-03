@@ -1,10 +1,13 @@
 <div class='text-center'>
-  <h2>{{name}}</h2>
+  <h2>{{title}}</h2>
   <p>{{{get_emoji}}}</p>
   <p>{{contents}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <p>
-    <button class='btn btn-primary'>Comment on this Post!</button>
-    {{! replace with edit button and delete button }}
+    <button class='btn btn-primary post-edit-btn' data-id='{{id}}'>Edit this Post!</button>
   </p>
+  <p>
+    <button class='btn btn-sm btn-danger post-delete-btn' data-id='{{id}}'>DELETE THIS POST</button>
+  </p>
+  <script src='/js/mypost.js'></script>
 </div>
