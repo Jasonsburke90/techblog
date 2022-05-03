@@ -6,6 +6,7 @@
   <h2>Replies:</h2>
   {{#each replies as |reply|}}
     <p>{{reply.reply_contents}}</p>
+    <p>Reply submitted by {{reply.user.name}} on {{format_date date_created}}</p>
   {{/each}}
   <p>
     <button class='btn btn-primary'>Comment on this Post!</button>
