@@ -2,7 +2,6 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#post-title').value.trim();
-  // const neededFunding = document.querySelector('#project-funding').value.trim();
   const contents = document.querySelector('#post-contents').value.trim();
 
   if (title && contents) {
@@ -41,5 +40,3 @@ const delButtonHandler = async (event) => {
 document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
 
 document.querySelector('.post-list').addEventListener('click', delButtonHandler);
-
-// add replies queryselector
