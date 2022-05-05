@@ -1,12 +1,11 @@
-<div class='text-center'>
+<div>
   <h2>{{title}}</h2>
-  <p>{{{get_emoji}}}</p>
   <p>{{contents}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p class="font-weight-light font-italic">Created by {{user.name}} on {{format_date date_created}}</p>
   <h2>Replies:</h2>
   {{#each replies as |reply|}}
     <p>{{reply.reply_contents}}</p>
-    <p>Reply submitted by {{reply.user.name}} on {{format_date date_created}}</p>
+    <p class="font-weight-light font-italic">Reply submitted by {{reply.user.name}} on {{format_date date_created}}</p>
   {{/each}}
   {{#if loggedIn}}
   <p>
