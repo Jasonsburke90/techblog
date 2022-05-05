@@ -1,12 +1,12 @@
 <div class='row'>
-  <div class='col-auto'>
-    <h2>Welcome, {{name}}!</h2>
+  <div class='w-100'>
+    <h2 class='text-center font-weight-bold'>Welcome, {{name}}!</h2>
   </div>
 </div>
 
-<div class='row mt-4'>
-  <div class='col-md-6'>
-    <h3>Create a New Blog Post:</h3>
+<div class='row m-3'>
+  <div class='col justify-content-center'>
+    <h3 class='text-align-center'>Create a New Blog Post:</h3>
 
     <form class='form new-post-form'>
       <div class='form-group'>
@@ -24,16 +24,16 @@
   </div>
 
   {{#if posts.length}}
-    <div class='col-md-6 post-list'>
+    <div class='row post-list'>
       <h3>My Posts:</h3>
 
       {{#each posts as |post|}}
-        <div class='row mb-2'>
-          <div class='col-md-8'>
+        <div class='row m-3'>
+          <div class='col-7'>
             <h4><a href='/mypost/{{post.id}}'>{{post.title}}</a></h4>
           </div>
-          <div class='col-md-4'>
-            Click on the link above to edit and delete your post
+          <div class='col-5'>
+            Click on the link edit and delete your post
           </div>
         </div>
       {{/each}}
